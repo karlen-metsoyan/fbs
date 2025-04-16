@@ -1,4 +1,5 @@
 <?php
+//
 include_once "check.php";
 // Query to get all employees
 $query = 'SELECT * FROM cars'; 
