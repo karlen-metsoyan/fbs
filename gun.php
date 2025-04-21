@@ -3,7 +3,7 @@ include_once "check.php";
 // Query to get all employees
 $query = 'SELECT * FROM gun';
 $result = pg_query($dbconn, $query) or die('Ошибка запроса: ' . pg_last_error());
-echo  '<link rel="stylesheet" href="styles/style_tables.css">';
+echo '<link rel="stylesheet" href="styles/style_tables.css">';
 echo "<center><b>Таблица оружия</b><br/><br></center>";
 // Start table for displaying results
 echo '<table class="table">';
@@ -25,9 +25,12 @@ if ($row = pg_fetch_assoc($result)) {
     } while ($row = pg_fetch_assoc($result));
 }
 echo "</table>\n";
+
 if ($userdata['role'] == 'admin')
 {
-echo "<center><br><a href='gun_add.php' class='button'>Добавить запись</a></center>";
+echo "<center><br><a href='gun_add.php' class='button'>Добавить оружие</a></center>";
+echo "<center><br><a href='gun_del.php' class='button'>Удалить оружие</a></center>";
+
 }
 // Clean up the result
 pg_free_result($result);
@@ -36,7 +39,11 @@ pg_free_result($result);
 pg_close($dbconn);
 ?>
 <center>
-<br><input type="button" onclick="history.back();" value="Назад"/>
+
+ </form>
+<br><a href='index.php' class='button'>Назад</a>
+
+<!--<br><input type="button" onclick="history.back();" value="Назад"/>-->
 
 <footer>
     <p>© 2025 Karlen Metsoyan</p>
