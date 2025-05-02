@@ -29,6 +29,7 @@ echo "</table>\n";
 if ($userdata['role'] == 'admin')
 {
 echo "<center><br><a href='gun_add.php' class='button'>Добавить оружие</a></center>";
+echo "<center><br><a href='gun_edit.php' class='button'>Изменить</a></center>";
 echo "<center><br><a href='gun_del.php' class='button'>Удалить оружие</a></center>";
 
 }

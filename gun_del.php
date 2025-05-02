@@ -66,4 +66,3 @@ function confirmDelete() {
     return confirm("Вы точно хотите удалить запись с номером оружия: " + number_gun + "?");
 }
 </script>
-
